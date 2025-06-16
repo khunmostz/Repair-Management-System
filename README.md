@@ -54,7 +54,6 @@
 ### ความต้องการของระบบ
 - Go 1.21+
 - Node.js 18+
-- PostgreSQL 13+
 
 ### 1. Clone โปรเจกต์
 ```bash
@@ -72,38 +71,6 @@ go mod download
 ```bash
 cd frontend
 npm install
-```
-
-### 4. ตั้งค่าฐานข้อมูล
-```sql
-CREATE DATABASE repair_system;
-CREATE USER repair_user WITH PASSWORD 'your_password';
-GRANT ALL PRIVILEGES ON DATABASE repair_system TO repair_user;
-```
-
-### 5. ตั้งค่า Environment Variables
-สร้างไฟล์ `.env` ใน `backend/`:
-```env
-# Database
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=repair_user
-DB_PASSWORD=your_password
-DB_NAME=repair_system
-
-# JWT Secret
-JWT_SECRET=your-super-secret-jwt-key
-
-# Encryption (Optional - จะใช้ JWT_SECRET หากไม่ระบุ)
-ENCRYPTION_KEY=your-32-character-encryption-key
-
-# Telegram (Optional - สามารถตั้งค่าใน UI ได้)
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token
-TELEGRAM_CHAT_ID=your_telegram_chat_id
-TELEGRAM_ENABLED=true
-
-# Server
-PORT=1234
 ```
 
 ## 🚀 การรันระบบ
